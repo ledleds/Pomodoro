@@ -15,21 +15,23 @@ const createWindow = () => {
     resizable: false,
     'node-integration': false,
   });
-  window.loadURL(`file://${__dirname}/index.html`)
+  window.loadURL(`file://${__dirname}/index.html`);
 };
 
 const getWindowPosition = () => {
-  const windowBounds = window.getBounds()
-  const trayBounds = tray.getBounds()
+  const windowBounds = window.getBounds();
+  const trayBounds = tray.getBounds();
 
   // Center window horizontally below the tray icon
-  const x = Math.round(trayBounds.x + (trayBounds.width / 2) - (windowBounds.width / 2))
+  const x = Math.round(
+    trayBounds.x + trayBounds.width / 2 - windowBounds.width / 2,
+  );
 
   // Position window 4 pixels vertically below the tray icon
-  const y = Math.round(trayBounds.y + trayBounds.height + 4)
+  const y = Math.round(trayBounds.y + trayBounds.height + 4);
 
-  return {x: x, y: y}
-}
+  return { x, y };
+};
 
 const showWindow = () => {
   const position = getWindowPosition();
@@ -48,7 +50,7 @@ const showWindow = () => {
 const createTray = () => {
   tray = new Tray('./images/tomato16.png');
   tray.on('click', () => {
-    if(window && window.open) {
+    if (window && window.open) {
       window.hide();
     }
     createWindow();
