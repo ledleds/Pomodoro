@@ -1,0 +1,15 @@
+{
+  "name": "pomodoro",
+  "version": "1.0.0",
+  "description": "A pomodoro timer Electron app that sits in your menu bar.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Victoria Ledsom",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^5.0.1",
+    "eslint": "^5.16.0"
+  }
+}
