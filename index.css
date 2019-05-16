@@ -1,0 +1,13 @@
+html, body {
+  font-family: sans-serif;
+  background: #113A47;
+}
+
+.timer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 75px;
+  color: #D7ECFF;
+}
