@@ -1,16 +1,26 @@
+const electron = window.require('electron');
+
+const notification = ({ title, body }) => {
+  new electron.remote.Notification({ title, body }).show();
+};
+
 const startCountdown = (minutes = 25) => {
   let counter = minutes;
 
-  console.log('Timer started');
   const interval = setInterval(() => {
-    console.log(counter);
+    console.log(`${counter} mins left`);
     counter -= 1;
 
     if (counter < 0) {
       clearInterval(interval);
-      console.log('Times up!');
+      notification({
+        title: 'Pomodoro',
+        body: 'Great work! Time to take a 5 minute break.',
+      });
     }
   }, 60000);
 };
 
-module.exports = { startCountdown };
+document.getElementById('start').addEventListener('click', () => {
+  startCountdown();
+});

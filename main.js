@@ -7,15 +7,20 @@ let window;
 let tray;
 const createWindow = () => {
   window = new BrowserWindow({
-    width: 210,
-    height: 210,
+    // changed from 210 to allow the dev tools to be shown
+    width: 810,
+    height: 810,
     frame: false,
     transparent: false,
     fullscreenable: false,
     resizable: false,
-    'node-integration': false,
+    webPreferences: {
+      nodeIntegration: true,
+    }
   });
   window.loadURL(`file://${__dirname}/index.html`);
+  // todo: remove below
+  window.webContents.openDevTools();
 };
 
 const getWindowPosition = () => {
