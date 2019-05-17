@@ -3,22 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Pomodoro</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css" media="screen" charset="utf-8">
   </head>
   <body>
-    <div class="timer">
-        <span id="mins">25</span>
-        <span id="colon">:</span>
-        <span id="seconds">00</span>
+      <ul class="timer">
+        <li class="time-elements" id="mins"></li>
+        <li class="time-elements" id="colon">:</li>
+        <li class="time-elements" id="seconds"></li>
+      </ul>
+    <div class="buttons">
+      <button id="start" type="button">
+        Start
+      </button>
+      <button id="pause" type="button">
+        Pause
+      </button>
+      <button id="reset" type="button">
+        Reset
+      </button>
     </div>
-    <button id="start" type="button">
-      Start
-    </button>
-    <button id="pause" type="button">
-      Pause
-    </button>
-    <button id="reset" type="button">
-      Reset
-    </button>
     <script type="text/javascript" src="./timer.js"></script>
   </body>

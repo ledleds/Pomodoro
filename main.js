@@ -7,9 +7,9 @@ let window;
 let tray;
 const createWindow = () => {
   window = new BrowserWindow({
-    // changed from 210 to allow the dev tools to be shown
-    width: 810,
-    height: 810,
+    // changed from 250 to allow the dev tools to be shown
+    width: 250,
+    height: 250,
     frame: false,
     transparent: false,
     fullscreenable: false,
@@ -20,7 +20,7 @@ const createWindow = () => {
   });
   window.loadURL(`file://${__dirname}/index.html`);
   // todo: remove below
-  window.webContents.openDevTools();
+  // window.webContents.openDevTools();
 };
 
 const getWindowPosition = () => {
