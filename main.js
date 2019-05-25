@@ -8,8 +8,8 @@ let tray;
 const createWindow = () => {
   window = new BrowserWindow({
     // changed from 250 to allow the dev tools to be shown
-    width: 250,
-    height: 250,
+    width: 650,
+    height: 650,
     frame: false,
     transparent: false,
     fullscreenable: false,
@@ -19,8 +19,8 @@ const createWindow = () => {
     }
   });
   window.loadURL(`file://${__dirname}/index.html`);
-  // todo: remove below
-  // window.webContents.openDevTools();
+  // uncomment below to show dev tools
+  window.webContents.openDevTools();
 };
 
 const getWindowPosition = () => {
@@ -45,7 +45,7 @@ const showWindow = () => {
   window.show();
   window.focus();
   window.open = true;
-
+  
   window.on('blur', () => {
     window.hide();
   });
